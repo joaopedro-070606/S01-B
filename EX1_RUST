@@ -1,0 +1,35 @@
+use std::io;
+
+fn validar_placa(placa: &str) -> bool {
+    let mut maiusculas = 0;
+    let mut numeros = 0;
+
+    for c in placa.chars() {
+        if c.is_ascii_uppercase() {
+            maiusculas = maiusculas + 1;
+        }
+        if c.is_digit(10) {
+            numeros = numeros + 1;
+        }
+    }
+
+    placa.len() >= 7 && maiusculas >= 3 && numeros >= 2
+}
+
+fn main() {
+    loop {
+        let mut entrada = String::new();
+        println!("digite a placa do veiculo:");
+        io::stdin().read_line(&mut entrada).expect("errro ao ler");
+        
+        let placa = entrada.trim();
+        
+        if validar_placa(placa) {
+            println!("placa cadastrada no sistema!");
+            break;
+        } else {
+            println!("placa invalida. teente novamente!");
+            println!("");
+        }
+    }
+}
