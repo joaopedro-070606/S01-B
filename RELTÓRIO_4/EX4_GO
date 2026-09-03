@@ -1,0 +1,29 @@
+package main
+
+import "fmt"
+
+func validarIngresso(setor string, codigo int) bool {
+    if setor == "VIP" && codigo == 2026 {
+        return true
+    }
+    return false
+}
+
+func main() {
+    var setor string
+    var codigo int
+
+    for true {
+        fmt.Print("digite o setor do ingresso: ")
+        fmt.Scanln(&setor)
+        fmt.Print("digite o codigo do ingresso: ")
+        fmt.Scanln(&codigo)
+
+        if validarIngresso(setor, codigo) {
+            fmt.Println("aACESSO LIBERADO A AREA VIP!")
+            break
+        } else {
+            fmt.Println("Ingresso ou setor invalido. Tente novamente.\n")
+        }
+    }
+}

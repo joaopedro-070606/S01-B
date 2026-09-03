@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func main() {
+    var codigo string
+    fmt.Print("digite o codigo de rastreio: ")
+    fmt.Scanln(&codigo)
+
+    if len(codigo) == 10 {
+        fmt.Println("\nCodigo de rastreio registrado no sistema!")
+    } else {
+        fmt.Println("\nErro: O codigo de rastreio deve ter exatamente 10 caracteres.")
+    }
+}

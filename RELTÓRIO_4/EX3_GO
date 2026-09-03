@@ -1,0 +1,15 @@
+package main
+
+import "fmt"
+
+func main() {
+    var plantoes int
+    fmt.Print("digite a quantidade de plantoes necessarios: ")
+    fmt.Scanln(&plantoes)
+
+    fmt.Println("\n-- escala de plantao tecnico --")
+    for i := 1; i <= plantoes; i++ {
+        dia := 1 + ((i - 1) * 4)
+        fmt.Printf("plantao %d: dia %d do mes\n", i, dia)
+    }
+}
